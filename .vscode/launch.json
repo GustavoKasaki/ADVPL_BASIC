@@ -48,8 +48,11 @@
 		},
 		{
 			"label": "u_exarray"
+		},
+		{
+			"label": "u_media"
 		}
 	],
-	"lastProgramExecuted": "u_exarray",
+	"lastProgramExecuted": "u_media",
 	"lastProgramArguments": []
 }

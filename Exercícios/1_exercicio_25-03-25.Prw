@@ -1,0 +1,44 @@
+#Include "Protheus.ch"
+
+User Function fProcVar()
+	Local cVal, nTotGer, lVarl, cTem, lCont, lTudo
+	Local cNom := ""
+	Local nVal := 5
+	Private nVal1:= 7 + 6, lVal, lQuas, nValor
+	Public lVar := nVal == 5
+
+	nVal1 += 15
+	nValor := (((nVal1- nVal)/2) * 3^2 + 1 )* -1
+	nTempo := 'nValor * 3'
+	nTotGer:= &nTempo
+	nTotGer++
+	cTem := "São Paulo"
+	cTem += ", 15 de Dezembro"
+	lCont := "Dez" $ cTem
+	lTudo := cTem = "São"
+	lQuas := cTem == "São Paulo"
+	lVal := nVal > 5
+	lValc := (nVal1 - 8) <= 13
+
+	fMudaFun(@nValor, lTudo, lQuas, lVal)
+	msginfo(nValor)
+Return
+
+Static Function fMudaFun(_val, _lTudo, _lQuas, _lVal)
+	msginfo(nVal1)
+Return
+
+User Function fContinua()
+	Msginfo(lVar)
+Return
+
+/*
+	Responda Verdadeiro ou Falso, nas afirmações a seguir e justifique:
+	a. (F) _lTudo na linha 18 será nula.						// Retorna o valor da validação
+	b. (V) nTempo é do tipo caracter.							// O valor está entre aspas
+	c. (V) lCont tem o conteúdo Verdadeiro.						// É verdadeiro pois o caracter 'Dez' existe no caracter cTem ("São Paulo, 15 de Dezembro")
+	d. (V) lVar não esta visível na linha 32.					// Não pois não é chamada na função
+	e. (V) lTudo na linha 18 tem seu identificador Local.		// Sim pois foi declarada como Local
+	f. (F) cNom na linha 21 é nula.								// Não pois ela foi definida como um char vazio
+	G. (V) nValor pode ser acessada na linha 28.				// Pois é uma variavel Private
+*/

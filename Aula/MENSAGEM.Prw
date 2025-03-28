@@ -1,26 +1,25 @@
-#Include 'Protheus.ch'
+#Include "Protheus.ch"
 
 User Function ALMSG()
-    MsgInfo('Exemplo de uma mensagem', 'Título')
-    Alert('Exemplo de um alert', 'Título')
-    MsgStop('Exemplo de um stop', 'Título')
-    
-    lVar := MsgYesNo('Exemplo de uma mensagem condicional, retornando true ou false', 'Título')
+
+    MsgInfo("Corpo da mensagem","Titulo")
+    Alert("Corpo","Titulo")
+    MsgStop("Corpo","Titulo")
+    Help(, , "TITULO", , "CORPO DO TEXTO", 1, 0, , , , , , {"Menssagem de solucao"})
+    lVar := MsgYesNo("Deseja prosseguir?","Titulo")
 
 Return
 
-
 User Function ALAVISO()
-    Local cTitulo       := 'Título aviso'
-    Local cMensagem     := 'Selecione uma opção' + CRLF
-    Local cMensagem2    := 'dos botões a seguir'
-    Local aBotoes       := {'Sim', 'Não', 'Sair'}
-    Local nTamanho      := 1
-    Local cTexto        := 'Subtítulo'
+    Local cTitulo 	    := "Titulo aviso"
+	Local cMensagem     := "Selecione uma opcao" + CRLF
+    Local cMensagem2    := "dos botoes a seguir"
+	Local aBotoes       := {"Nao","Sim","Sair"}
+	Local nTamanho      := 1
+    Local cTexto        := "Sob o titulo"
 
     cMensagem += cMensagem2
 
-    // nRet retorna a posição do botão (Sim = 1, Não = 2, Sair = 3)
-    nRet := AVISO(cTitulo, cMensagem, aBotoes, nTamanho, cTexto)
+	nRet := AVISO(cTitulo, cMensagem, aBotoes, nTamanho, cTexto )
 
 Return
