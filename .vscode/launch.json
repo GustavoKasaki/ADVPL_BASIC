@@ -45,8 +45,11 @@
 		},
 		{
 			"label": "u_EXE02B"
+		},
+		{
+			"label": "u_exarray"
 		}
 	],
-	"lastProgramExecuted": "u_EXE02B",
+	"lastProgramExecuted": "u_exarray",
 	"lastProgramArguments": []
 }
