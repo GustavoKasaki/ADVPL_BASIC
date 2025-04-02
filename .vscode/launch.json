@@ -51,8 +51,17 @@
 		},
 		{
 			"label": "u_media"
+		},
+		{
+			"label": "sigagfe"
+		},
+		{
+			"label": "u_xbloco"
+		},
+		{
+			"label": "u_xbloco_aeval"
 		}
 	],
-	"lastProgramExecuted": "u_media",
+	"lastProgramExecuted": "u_xbloco_aeval",
 	"lastProgramArguments": []
 }
