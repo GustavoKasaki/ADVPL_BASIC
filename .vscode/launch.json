@@ -60,8 +60,11 @@
 		},
 		{
 			"label": "u_xbloco_aeval"
+		},
+		{
+			"label": "u_XFUNAMB"
 		}
 	],
-	"lastProgramExecuted": "u_xbloco_aeval",
+	"lastProgramExecuted": "u_XFUNAMB",
 	"lastProgramArguments": []
 }
