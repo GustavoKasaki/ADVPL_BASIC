@@ -63,8 +63,11 @@
 		},
 		{
 			"label": "u_XFUNAMB"
+		},
+		{
+			"label": "u_xcadcli"
 		}
 	],
-	"lastProgramExecuted": "u_XFUNAMB",
+	"lastProgramExecuted": "sigagfe",
 	"lastProgramArguments": []
 }
