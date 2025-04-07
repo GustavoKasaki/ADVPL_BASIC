@@ -10,8 +10,8 @@ User Function XPOSTAB()
     
     DbSelectArea("SA1")
     SA1->(DbSetOrder(1))
-
     SA1->(DbGoTop())
+    
     If DbSeek(xFilial("SA1") + cCodCli + "01")
         MsgInfo("Encontrou")
     Else

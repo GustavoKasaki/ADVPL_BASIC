@@ -66,8 +66,11 @@
 		},
 		{
 			"label": "u_xcadcli"
+		},
+		{
+			"label": "sigacom"
 		}
 	],
-	"lastProgramExecuted": "sigagfe",
+	"lastProgramExecuted": "sigacom",
 	"lastProgramArguments": []
 }
