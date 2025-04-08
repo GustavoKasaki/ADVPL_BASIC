@@ -69,8 +69,20 @@
 		},
 		{
 			"label": "sigacom"
+		},
+		{
+			"label": "U_BUSCACLI"
+		},
+		{
+			"label": "SIGAMDI"
+		},
+		{
+			"label": "U_A010TOK"
+		},
+		{
+			"label": "u_XTMPTAB"
 		}
 	],
-	"lastProgramExecuted": "sigacom",
+	"lastProgramExecuted": "sigagfe",
 	"lastProgramArguments": []
 }

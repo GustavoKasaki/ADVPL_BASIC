@@ -44,59 +44,44 @@
 
 #Include 'Protheus.ch'
 
-User Function XCADCLI(cCodCLI)
-    Local cMsg
+User Function BUSCACLI(cCodCLI)
+	Local cMsg
+    Local Area := GetArea()
 
-    DBSelectArea("SA1")
-    SA1 -> (DBSetOrder(1))
-    SA1 -> (DBGoTop())
-    
-    If DBSeek(cCodCLI)
-        cMsg        := "Cliente encontrado!"
-    Else
-        cMsg        := "Cliente não encontrado!"
-    Endif
-    
-    MsgInfo(cMsg, "Resultado da Busca")
-    
-    If DBSeek(cCodCLI)
-        XATTCLI(cCodCLI)
-    Endif
+	DBSelectArea("SA1")
+	SA1->(dbSetOrder(1))
+	SA1->(dbGoTop())
 
-Return
+	If SA1->(dbSeek(xFilial(SA1) + cCodCLI))
+		cMsg          := "Cliente encontrado!"
 
-Static Function XATTCLI(cCodCLI)
-    Local cMsg
-    Reclock("SA1", .F.) // Bloqueia o registro
-    
-    // Atualiza os campos
-    SA1 -> A1_NOME  := "CLIENTE ALTERADO"
-    SA1 -> A1_END   := "ENDEREÇO ALTERADO"
-    
-    // Salva as alterações
-    DbCommit()
-    
-    // Libera o registro
-    MsUnlock()
-    
-    cMsg            := "Cliente atualizado com sucesso!"
-    MsgInfo(cMsg, "Atualização")
-Return
+        RecLock("SA1", .F.)
+        SA1->A1_NOME  := "CLIENTE ALTERADO"
+        SA1->A1_END   := "ENDEREÇO ALTERADO"
+        SA1->(msUnlock())
+
+	Else
+		cMsg        := "Cliente não encontrado!"
+	Endif
+
+	MsgInfo(cMsg, "Resultado da Busca")
+
+Return Area
 
 User Function PE_A010TOK()
-    Local lConfirma
-    Local cNomeProd
-    Local cRet
-    
-    cNomeProd       := AllTrim(M -> B1_DESC)
-    
-    lConfirma       := MsgYesNo("Confirma a inclusão do produto " + cNomeProd + "?")
-    
-    If lConfirma == .F.
-        cRet        := .F.
+	Local lConfirma
+	Local cNomeProd
+	Local cRet
 
-        Else
-            cRet    := .T.
-    Endif
+	cNomeProd       := AllTrim(M -> B1_DESC)
+
+	lConfirma       := MsgYesNo("Confirma a inclusão do produto " + cNomeProd + "?")
+
+	If lConfirma == .F.
+		cRet        := .F.
+
+	Else
+		cRet        := .T.
+	Endif
 
 Return cRet
